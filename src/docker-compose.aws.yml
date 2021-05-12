@@ -109,8 +109,6 @@ services:
       - UseCustomizationData=True
       - ApplicationInsights__InstrumentationKey=${INSTRUMENTATION_KEY}
       - OrchestratorType=${ORCHESTRATOR_TYPE}
-    #ports:
-    #  - "5105:80"
 
   basket-api:
     environment:
@@ -307,8 +305,8 @@ services:
       #- IdentityUrlExternal=http://${ESHOP_EXTERNAL_DNS_NAME_OR_IP}:5105
 
 ## attempt to fix the healthcheck, but need to figure out the name of the target group that is created for webstatus
-#x-aws-cloudformation:
-#  Resources:
-#    WebStatusTCP80TargetGroup: # this is not right... need to figure this out
-#      Properties:
-#        HealthCheckPath: /hc-ui
+x-aws-cloudformation:
+  Resources:
+    WebstatusTCP80TargetGroup:
+      Properties:
+        HealthCheckPath: /hc-ui
