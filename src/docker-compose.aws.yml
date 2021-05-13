@@ -11,7 +11,10 @@ version: '3.4'
 # Set ASPNETCORE_ENVIRONMENT= Development or Production, depending if you want to show up errors while testing.
 #
 # You need to start it with the following CLI command:
-# docker compose -p eShopOnContainers -f docker-compose.yml -f docker-compose.prod.yml --env-file aws.env up
+# docker compose -p eShopOnContainers -f docker-compose.yml -f docker-compose.aws.yml --env-file aws.env up
+# 
+# If you need to see what CloudFormation settings are generated, you can export that into a text file with the following command:
+# docker compose -p eShopOnContainers -f docker-compose.yml -f docker-compose.aws.yml --env-file aws.env convert > aws-cloudformation-config.txt
 
 services:
 
