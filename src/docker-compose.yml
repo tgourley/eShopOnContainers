@@ -103,6 +103,17 @@ services:
   #webshoppingapigw:
   #  image: envoyproxy/envoy:v1.11.1
 
+  #webspa:
+  #  image: ${REGISTRY:-eshop}/webspa:${PLATFORM:-linux}-${TAG:-latest}
+  #  build:
+  #    context: .
+  #    dockerfile: Web/WebSPA/Dockerfile
+  #    args:
+  #      NODE_IMAGE: ${NODE_IMAGE:-node:12.0}
+  #  depends_on:
+  #    - webshoppingagg
+  #    - webshoppingapigw
+
   #webshoppingagg:
   #  image: ${REGISTRY:-eshop}/webshoppingagg:${PLATFORM:-linux}-${TAG:-latest}
   #  build:
@@ -116,17 +127,6 @@ services:
   #    - ordering-api
   #    - catalog-api
   #    - basket-api
-
-  #webspa:
-  #  image: ${REGISTRY:-eshop}/webspa:${PLATFORM:-linux}-${TAG:-latest}
-  #  build:
-  #    context: .
-  #    dockerfile: Web/WebSPA/Dockerfile
-  #    args:
-  #      NODE_IMAGE: ${NODE_IMAGE:-node:10.13}
-  #  depends_on:
-  #    - webshoppingagg
-  #    - webshoppingapigw
 
   #webmvc:
   #  image: ${REGISTRY:-eshop}/webmvc:${PLATFORM:-linux}-${TAG:-latest}
